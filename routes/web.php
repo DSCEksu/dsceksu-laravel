@@ -11,10 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => 'web'], function () {
+  Route::get('/', 'FrontEndController@index')->name('index');
+  Route::get('/learn', 'FrontEndController@learn')->name('learn');
+  Route::get('/projects', 'FrontEndController@projects')->name('projects');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => ['auth','verified']], function () {
+	Route::get('/home', 'HomeController@index')->name('home');
+});
