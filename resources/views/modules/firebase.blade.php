@@ -4,13 +4,13 @@
 
 <script>
   var firebaseConfig = {
-    apiKey: config('services.google.firebase.apiKey'),
-    authDomain: config('services.google.firebase.authDomain'),
-    databaseURL: config('services.google.firebase.databaseURL'),
-    projectId: config('services.google.firebase.projectId'),
-    storageBucket: config('services.google.firebase.storageBucket'),
-    messagingSenderId: config('services.google.firebase.messagingSenderId'),
-    appId: config('services.google.firebase.appId')
+    apiKey: docApiKey,
+    authDomain: document.getElementById("authDomain").textContent,
+    databaseURL: document.getElementById("databaseURL").textContent,
+    projectId: document.getElementById("projectId").textContent,
+    storageBucket: document.getElementById("storageBucket").textContent,
+    messagingSenderId: document.getElementById("messagingSenderId").textContent,
+    appId: document.getElementById("appId").textContent
   };
   firebase.initializeApp(firebaseConfig);
 </script>
