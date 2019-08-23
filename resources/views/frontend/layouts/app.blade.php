@@ -38,17 +38,17 @@
   <meta name="twitter:image:src" content="{{ config('app.url') }}/images/icons/icon-512x512.png">
   <meta name="twitter:image:alt" content="{{ config('app.nick') }}">
 
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/frontend/responsive.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/frontend/assets/owl.carousel.min.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/frontend/assets/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/frontend/responsive.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/frontend/assets/owl.carousel.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/frontend/assets/bootstrap.min.css') }}">
   <link rel="dns-prefetch" href="https://docs.google.com">
   <link href='https://fonts.googleapis.com/css?family=Google+Sans:400,500,700|Material+Icons' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
   <link rel="stylesheet" type="text/css" href="{{ asset('css/frontend/assets/pace-theme.css') }}">
 
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/frontend/styles.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/frontend/responsive.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/frontend/styles.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/frontend/responsive.css') }}">
 
   @include('modules.analytics')
 
@@ -171,15 +171,14 @@
   </footer>
   <a href="#" id="scroll" style="display: none;"><i class="fas fa-angle-up"></i></a>
 
-  <script type="text/js" src="{{ asset('js/frontend/assets/pace.js') }}"></script>
-  <script type="text/js" src="{{ asset('js/frontend/assets/jquery.min.js') }}"></script>
-  <script type="text/js" src="{{ asset('js/frontend/assets/bootstrap.bundle.min.js') }}"></script>
-  <script type="text/js" src="{{ asset('js/frontend/assets/jquery.magnific-popup.min.js') }}"></script>
-  <script type="text/js" src="{{ asset('js/frontend/assets/jquery.easing.min.js') }}"></script>
-  <script type="text/js" src="{{ asset('js/frontend/assets/swiper.min.js') }}"></script>
-  <script type="text/js" src="{{ asset('js/frontend/assets/owl.carousel.min.js') }}"></script>
-  <script type="text/js" src="{{ asset('js/frontend/assets/hammer.js') }}"></script>
-  <script type="text/js" src="{{ asset('js/frontend/custom.js') }}"></script>
-  <script type="text/js" src="{{ asset('js/frontend/member.js') }}"></script>
+  <script src="{{ asset('js/frontend/assets/pace.js') }}"></script>
+  <script src="{{ asset('js/frontend/assets/jquery.min.js') }}"></script>
+  <script src="{{ asset('js/frontend/assets/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('js/frontend/assets/jquery.magnific-popup.min.js') }}"></script>
+  <script src="{{ asset('js/frontend/assets/jquery.easing.min.js') }}"></script>
+  <script src="{{ asset('js/frontend/assets/swiper.min.js') }}"></script>
+  <script src="{{ asset('js/frontend/assets/owl.carousel.min.js') }}"></script>
+  <script src="{{ asset('js/frontend/assets/hammer.js') }}"></script>
+  <script src="{{ asset('js/frontend/custom.js') }}"></script>
 </body>
 </html>
