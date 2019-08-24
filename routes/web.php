@@ -16,7 +16,7 @@ use Spatie\Sitemap\SitemapGenerator;
 Route::get('sitemap', function () {
   SitemapGenerator::create(config('app.url'))->writeToFile('sitemap.xml');
 
-  return config('app.nick');
+  return view('frontend.sitemap');
 });
 
 Route::group(['middleware' => 'web'], function () {

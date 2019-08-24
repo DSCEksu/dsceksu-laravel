@@ -301,8 +301,8 @@
               <div class="row align-items-center">
                 <div class="col-sm-6">
                   <div class="feature-list-image">
-                    {{-- <img class="card-img-top" src="{{ asset('images/frontend/events/techwork.png') }}" alt="Tech Workshop"> --}}
-                    <iframe data-urllink="https://docs.google.com/presentation/d/e/2PACX-1vSubYcbqWaNFgVUDQ14VYLf_4RFiaVeFl-Tz6ryS_YAuYmP9xhdAUrV0_V5GpeHHenACAIwl8zwTZ3z/embed?start=false&loop=true&delayms=3000" frameborder="0" width="480" height="299" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                    <img class="card-img-top" src="{{ asset('images/frontend/events/techwork.png') }}" alt="Tech Workshop">
+                    {{-- <iframe data-urllink="https://docs.google.com/presentation/d/e/2PACX-1vSubYcbqWaNFgVUDQ14VYLf_4RFiaVeFl-Tz6ryS_YAuYmP9xhdAUrV0_V5GpeHHenACAIwl8zwTZ3z/embed?start=false&loop=true&delayms=3000" frameborder="0" width="480" height="299" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> --}}
                   </div>
                 </div>
                 <div class="col-sm-5 ml-auto">
