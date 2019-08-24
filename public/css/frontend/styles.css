@@ -178,6 +178,11 @@ p {
   vertical-align: middle;
 }
 
+#share-loader {
+  position: relative;
+  display: none;
+}
+
 #loader {
   margin-top: 10px;
   display: none
@@ -2177,4 +2182,41 @@ hr{
 }
 .err-p{
   font-size: 60px;
+}
+
+@-webkit-keyframes spinner-grow {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes spinner-grow {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.spinner-grow {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: text-bottom;
+  background-color: currentColor;
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-animation: spinner-grow .75s linear infinite;
+  animation: spinner-grow .75s linear infinite;
+}
+
+.spinner-grow-sm {
+  width: 1rem;
+  height: 1rem;
 }
