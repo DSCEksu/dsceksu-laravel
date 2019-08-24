@@ -72,7 +72,7 @@ async function copyToClipboard(stringToCopy) {
     <div class="modal-content">
       <div class="modal-header">
         <div class="modal-title">
-          <img class="img-responsived" src="{{ config('app.url') }}/images/dsc-eksu.png" height="40" alt="DSC EKSU">
+          <img class="img-responsived" src="{{ config('app.url') }}/images/dsc-footer.png" height="40" alt="DSC EKSU">
         </div>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>

@@ -5,24 +5,24 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
-  <title>{{ config('app.nick') }} @yield('title')</title>
+  <title>{{ Request::is('/') ? config('app.name') : config('app.nick') }} @yield('title')</title>
 
   <meta name="author" content="Emmanuel Joseph (JET)"/>
-  <meta name="title" content="{{ config('app.name') }}">
+  <meta name="title" content="{{ Request::is('/') ? config('app.name') : config('app.nick') }} @yield('title')">
   <meta name="keywords" content="dsc, developer student clubs, {{ config('app.name') }}, {{ config('app.nick') }}, google developers, sub saharan africa, students, technology, nigeria, emmanueljet, emmanuel joseph"/>
   <meta name="description" content="Developer Student Clubs(DSC) is a Google Developers program for university students to acquire technical skills and solve problems">
 
   <!-- Google -->
   <meta name="google-site-verification" content="{{ config('services.google.site_id') }}" />
-  <link itemprop="url" rel="canonical" href="{{ config('app.url') }}" />
-  <meta itemprop="name" content="{{ config('app.name') }}">
+  <link itemprop="url" rel="canonical" href="{{ url()->current() }}" />
+  <meta itemprop="name" content="{{ Request::is('/') ? config('app.name') : config('app.nick') }} @yield('title')">
   <meta itemprop="description" content="Developer Student Clubs(DSC) is a Google Developers program for university students to acquire technical skills and solve problems">
   <meta itemprop="image" content="{{ config('app.url') }}/images/icons/icon-512x512.png">
 
   <!-- Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{ config('app.url') }}" />
-  <meta property="og:title" content="{{ config('app.name') }}" />
+  <meta property="og:url" content="{{ url()->current() }}" />
+  <meta property="og:title" content="{{ Request::is('/') ? config('app.name') : config('app.nick') }} @yield('title')" />
   <meta property="og:description" content="Developer Student Clubs(DSC) is a Google Developers program for university students to acquire technical skills and solve problems" />
   <meta property="og:image" content="{{ config('app.url') }}/images/icons/icon-512x512.png" />
   <meta property="og:image:type" content="image/png" />
@@ -30,10 +30,10 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="{{ config('app.url') }}">
+  <meta property="twitter:url" content="{{ url()->current() }}">
   <meta name="twitter:site" content="@DscEksu">
   <meta name="twitter:creator" content="@emmanuelJet_">
-  <meta name="twitter:title" content="{{ config('app.name') }}">
+  <meta name="twitter:title" content="{{ Request::is('/') ? config('app.name') : config('app.nick') }} @yield('title')">
   <meta name="twitter:description" content="Developer Student Clubs(DSC) is a Google Developers program for university students to acquire technical skills and solve problems">
   <meta name="twitter:image:src" content="{{ config('app.url') }}/images/icons/icon-512x512.png">
   <meta name="twitter:image:alt" content="{{ config('app.nick') }}">
@@ -70,18 +70,24 @@
         </span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-lg-auto">
-          <li class="nav-item {{ Request::is('/') ? 'active' : '' }}"><a class="nav-link" href="{{ route('index') }}#overview">Overview</a></li>
-          <li class="nav-item"><a href="{{ route('index') }}#technologies" class="nav-link">Technologies</a></li>
-          <li class="nav-item {{ Request::is('learn') ? 'active' : '' }}"><a href="{{ route('learn') }}" class="nav-link">Learn</a></li>
-          <li class="nav-item {{ Request::is('projects') ? 'active' : '' }}"><a href="{{ route('projects') }}" class="nav-link">Projects</a></li>
-          <li class="nav-item"><a href="{{ route('index') }}#workshops" class="nav-link">Workshops</a></li>
-          <li class="nav-item"><a href="{{ route('index') }}#team" class="nav-link">Team</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://dsceksu.blogspot.com" target="_blank" rel="follow">Stories</a></li>
-        </ul>
-        <div class="custom-menu__right">
-          <a href="{{ route('register') }}" class="event-btn"><i class="fa fa-users"></i> Become a member</a>
-        </div>
+        @if (Request::is('offline'))
+          <div class="custom-menu__right">
+            <a href="#offlineModal" data-toggle="modal" class="event-btn"><i class="fa fa-users"></i> Become a member</a>
+          </div>
+        @else
+          <ul class="navbar-nav ml-lg-auto">
+            <li class="nav-item {{ Request::is('/') ? 'active' : '' }}"><a class="nav-link" href="{{ route('index') }}#overview">Overview</a></li>
+            <li class="nav-item"><a href="{{ route('index') }}#technologies" class="nav-link">Technologies</a></li>
+            <li class="nav-item {{ Request::is('learn') ? 'active' : '' }}"><a href="{{ route('learn') }}" class="nav-link">Learn</a></li>
+            <li class="nav-item {{ Request::is('projects') ? 'active' : '' }}"><a href="{{ route('projects') }}" class="nav-link">Projects</a></li>
+            <li class="nav-item"><a href="{{ route('index') }}#workshops" class="nav-link">Workshops</a></li>
+            <li class="nav-item"><a href="{{ route('index') }}#team" class="nav-link">Team</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://dsceksu.blogspot.com" target="_blank" rel="follow">Stories</a></li>
+          </ul>
+          <div class="custom-menu__right">
+            <a href="{{ route('register') }}" class="event-btn"><i class="fa fa-users"></i> Become a member</a>
+          </div>
+        @endif
       </div>
     </div>
   </nav>
@@ -93,7 +99,7 @@
       <div class="row flex-column-reverse flex-sm-row flex-lg-row">
         <div class="col-md-4 col-12">
           <div class="footer-widget first-of-footer-widget">
-            <img src="{{ asset('images/dsc-eksu.png') }}" class="logo-sm mb-10" alt="DSC Ekiti State University footer logo">
+            <img src="{{ asset('images/dsc-footer.png') }}" class="logo-sm mb-10" alt="{{ config('app.name') }}">
             <p>&copy; {{ date('Y') }} | All Rights Reserved.</p>
             <span>Feel free to drop us an email at </span>
             <a href="mailto:dsceksu@gmail.com">dsceksu@gmail.com</a>
@@ -161,6 +167,9 @@
                   <li>
                     <a href="https://github.com/DSCEksu/dsceksu-laravel" target="_blank" rel="noreferrer">View source</a>
                   </li>
+                  <li>
+                    <a href="javascript:;" onclick="share('{{ config('app.name') }}', '{{ config('app.url') }}', 'Have you been looking for a place you can learn technical skills for free? If yes, check out {{ config('app.nick') }} now at {{ config('app.school') }}')"><i class="fa fa-share"></i> Share</a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -186,6 +195,38 @@
     document.querySelectorAll('iframe[data-urllink]').forEach(img => {
       iframeObserver.observe(img);
     });
+
+    async function share(title, url, text) {
+      if (window.Windows) {
+        const DataTransferManager = window.Windows.ApplicationModel.DataTransfer.DataTransferManager;
+
+        const dataTransferManager = DataTransferManager.getForCurrentView();
+        dataTransferManager.addEventListener("datarequested", (ev) => {
+          const data = ev.request.data;
+
+          data.properties.title = title;
+          data.properties.url = url;
+          data.setText(text);
+        });
+
+        DataTransferManager.showShareUI();
+
+        return true;
+      } else if (navigator.share) {
+        try {
+          await navigator.share({
+            title: title,
+            url: url,
+            text: text,
+          });
+
+          return true;
+        } catch (err) {
+          console.error('There was an error trying to share this content');
+          return false;
+        }
+      }
+    }
   </script>
 
   <script src="{{ asset('js/frontend/assets/pace.js') }}"></script>

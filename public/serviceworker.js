@@ -16,7 +16,7 @@ var filesToCache = [
   '/js/frontend/assets/owl.carousel.min.js',
   '/js/frontend/assets/swiper.min.js',
   '/images/logo.png',
-  '/images/dsc-eksu.png',
+  '/images/dsc-footer.png',
   '/images/frontend/diversity.png',
   '/images/frontend/events/techwork.png',
   '/images/frontend/team/emmanueljet.png',
