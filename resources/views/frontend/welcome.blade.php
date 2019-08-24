@@ -8,7 +8,7 @@
           <div class="hero-content">
             <div class="hero-title__group">
               <div class="hero-title">
-                <h2 class="zuri">Developer Student Club<br> Ekiti State University.</h2>
+                <h2 class="zuri">Developer Student Club<br> {{ config('app.school') }}.</h2>
               </div>
               <div class="Hero--Subtitle">
                 <p class="lead">Developer Student Clubs is a
@@ -16,7 +16,7 @@
                 </p>
               </div>
             </div>
-            <a class="hero-button" href="{{ route('login') }}"><i class="fa fa-users"></i> Become a member</a>
+            <a class="hero-button" href="{{ route('register') }}"><i class="fa fa-users"></i> Become a member</a>
           </div>
         </div>
         <div class="col-12 col-sm-5 ml-auto ml-pic">
@@ -244,54 +244,6 @@
                   <a href="https://www.meetup.com/GDG-Kisii/events/258288805/" class="button float-right">Attend</a>
                 </div>
               </div>
-            </div>
-            <div class="col-md-4 col-12">
-              <div class="card event-card">
-                <img class="card-img-top" src="{{ asset('frontendimages/assets/events/fba.png') }}/" alt="Event two poster">
-                <div class="card-body">
-                  <p class="tagging expert float-right">Expert</p>
-                  <h5 class="card-title">Firebase for Android</h5>
-                  <table>
-                    <tr>
-                      <td width="15%" class="text-blue"><i class="far fa-calendar-alt"></i></td>
-                      <td>6<sup>th</sup> May 2019</td>
-                    </tr>
-                    <tr>
-                      <td class="text-red"><i class="fas fa-map-marker-alt"></i></td>
-                      <td>LH 20, Main Campus</td>
-                    </tr>
-                    <tr>
-                      <td class="text-green"><i class="far fa-clock"></i></td>
-                      <td>0900hrs - 1400hrs</td>
-                    </tr>
-                  </table>
-                  <a href="https://www.meetup.com/GDG-Kisii/events/258288819/" class="button float-right">Attend</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-12">
-              <div class="card event-card">
-                <img class="card-img-top" src="{{ asset('images/frontend/events/rpj.png') }}" alt="Event three poster">
-                <div class="card-body">
-                  <p class="tagging beginner float-right">Beginner</p>
-                  <h5 class="card-title">Raspberry Pi Jam</h5>
-                  <table>
-                    <tr>
-                      <td width="15%" class="text-blue"><i class="far fa-calendar-alt"></i></td>
-                      <td>22<sup>nd</sup> May 2019</td>
-                    </tr>
-                    <tr>
-                      <td class="text-red"><i class="fas fa-map-marker-alt"></i></td>
-                      <td>LH 20, Main Campus</td>
-                    </tr>
-                    <tr>
-                      <td class="text-green"><i class="far fa-clock"></i></td>
-                      <td>1800hrs - 1930hrs</td>
-                    </tr>
-                  </table>
-                  <a href="https://www.meetup.com/GDG-Kisii/events/258212444/" class="button float-right">Attend</a>
-                </div>
-              </div>
             </div> -->
           </div>
         </div>
@@ -314,7 +266,7 @@
                       <h6>VENUE : TechHub EKSU</h6>
                       <p>We learnt web and android development</p>
                     </div>
-                    <!-- <a href="#" class="past-event" target="_blank" rel="noopener">EVENT PHOTOS&nbsp;&nbsp;<i class="fas fa-camera"></i></a> -->
+                    <a href="#" class="past-event" target="_blank" rel="noopener">EVENT PHOTOS&nbsp;&nbsp;<i class="fas fa-camera"></i></a>
                   </div>
                 </div>
               </div>
@@ -541,7 +493,7 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">How frequently do events and workshops occur?</h5>
-              <p>We have a hands-on session every Tuesday at SG25 from 1800hrs to 2030hrs. We also hold workshops and showcases & we would recommend you to join our community on <a href="https://www.meetup.com/DSCUniversity/">Meetup</a> to get updates.</p>
+              <p>We hold workshops and showcases at TechHub EKSU & we would recommend you to join our community by becoming a member to get updates.</p>
             </div>
           </div>
         </div>
@@ -569,20 +521,9 @@
       </div>
     </div>
   </section>
-  <script>
-    function iframeObserverCallback(iframeEntries, observer) {
-      iframeEntries.forEach(iframe => {
-        if (iframe.isIntersecting && window.matchMedia('(min-width: 450px)').matches) {
-          iframe.target.setAttribute('src', iframe.target.dataset.urllink);
-          observer.unobserve(iframe.target);
-        }
-      })
-    }
-    const iframeObserver = new IntersectionObserver(iframeObserverCallback, { rootMargin: '30px 0px' });
-    iframeObserver.POLL_INTERVAL = 200;
-    iframeObserver.USE_MUTATION_OBSERVER = false;
-    document.querySelectorAll('iframe[data-urllink]').forEach(img => {
-      iframeObserver.observe(img);
-    });
-  </script>
+
+  <div id="toast">
+    <div id="icon">Icon</div>
+    <div id="message">A notification message..</div>
+  </div>
 @endsection

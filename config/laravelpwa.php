@@ -1,10 +1,11 @@
 <?php
 
 return [
-  'name' => env('APP_NAME', 'DSC Ekiti State University'),
+  'name' => env('APP_NAME'),
+  'short_name' => env('APP_NICK'),
   'manifest' => [
-    'name' => env('APP_NAME', 'DSC Ekiti State University'),
-    'short_name' => env('APP_NICK', 'DSC EKSU'),
+    'name' => env('APP_NAME'),
+    'short_name' => env('APP_NICK'),
     'description' => 'Developer Student Clubs(DSC) is a Google Developers program for university students to acquire technical skills and solve problems',
     'start_url' => '/',
     'background_color' => '#2F5BE7',

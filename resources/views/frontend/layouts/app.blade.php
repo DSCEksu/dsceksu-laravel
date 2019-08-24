@@ -80,7 +80,7 @@
           <li class="nav-item"><a class="nav-link" href="https://dsceksu.blogspot.com" target="_blank" rel="follow">Stories</a></li>
         </ul>
         <div class="custom-menu__right">
-          <a href="{{ route('login') }}" class="event-btn"><i class="fa fa-users"></i> Become a member</a>
+          <a href="{{ route('register') }}" class="event-btn"><i class="fa fa-users"></i> Become a member</a>
         </div>
       </div>
     </div>
@@ -156,10 +156,10 @@
                 <h4 class="footer-widget__title">Contribute</h4>
                 <ul class="list-unstyled">
                   <li>
-                    <a href="https://github.com/DSCEksu/dsceksu/issues/new?template=documentation-bug.md" target="_blank" rel="noreferrer">File a bug</a>
+                    <a href="https://github.com/DSCEksu/dsceksu-laravel/issues/new?template=documentation-bug.md" target="_blank" rel="noreferrer">File a bug</a>
                   </li>
                   <li>
-                    <a href="https://github.com/DSCEksu/dsceksu" target="_blank" rel="noreferrer">View source</a>
+                    <a href="https://github.com/DSCEksu/dsceksu-laravel" target="_blank" rel="noreferrer">View source</a>
                   </li>
                 </ul>
               </div>
@@ -170,6 +170,23 @@
     </div>
   </footer>
   <a href="#" id="scroll" style="display: none;"><i class="fas fa-angle-up"></i></a>
+
+  <script>
+    function iframeObserverCallback(iframeEntries, observer) {
+      iframeEntries.forEach(iframe => {
+        if (iframe.isIntersecting && window.matchMedia('(min-width: 450px)').matches) {
+          iframe.target.setAttribute('src', iframe.target.dataset.urllink);
+          observer.unobserve(iframe.target);
+        }
+      })
+    }
+    const iframeObserver = new IntersectionObserver(iframeObserverCallback, { rootMargin: '30px 0px' });
+    iframeObserver.POLL_INTERVAL = 200;
+    iframeObserver.USE_MUTATION_OBSERVER = false;
+    document.querySelectorAll('iframe[data-urllink]').forEach(img => {
+      iframeObserver.observe(img);
+    });
+  </script>
 
   <script src="{{ asset('js/frontend/assets/pace.js') }}"></script>
   <script src="{{ asset('js/frontend/assets/jquery.min.js') }}"></script>

@@ -13,8 +13,9 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'DSC Ekiti State University'),
-    'nick' => env('APP_NICK', 'DSC EKSU'),
+    'name' => env('APP_NAME'),
+    'nick' => env('APP_NICK'),
+    'school' => env('SCHOOL_NAME'),
 
     /*
     |--------------------------------------------------------------------------
