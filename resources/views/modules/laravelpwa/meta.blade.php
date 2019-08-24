@@ -3,6 +3,9 @@
 <!-- Chrome for Android theme color -->
 <meta name="theme-color" content="{{ $config['theme_color'] }}">
 
+<!-- Auto Rotation disabled for PWA -->
+<meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+
 <!-- Add to homescreen for Chrome on Android -->
 <meta name="mobile-web-app-capable" content="{{ $config['display'] == 'standalone' ? 'yes' : 'no' }}">
 <meta name="application-name" content="{{ $config['short_name'] }}">
