@@ -6,7 +6,7 @@
   ],
   "website": "https://dsceksu.herokuapp.com",
   "repository": "https://github.com/DSCEksu/dsceksu-laravel",
-  "logo": "https://raw.githubusercontent.com/laravel/art/master/laravel-l-slant.png",
+  "logo": "https://lh4.googleusercontent.com/PGRLyOp_WAi6gbx2-YHx2OmQjF9JfO4olLB5r7OC1upSlH3IIrLfIIiZeOWt4n1POobfVh2NAsjtR5EVi4RwKoxk2fffuhASVmW-lciT_CtdEDGPZQ=w472",
   "env": {
     "APP_NAME": {
       "description": "Your App Name. E.g DSC Ekiti State University",
@@ -17,7 +17,7 @@
       "required": true
     },
     "SCHOOL_NAME": {
-      "description": "Your School Name. E.g DSC EKSU",
+      "description": "Your School Name. E.g Ekiti State University",
       "required": true
     },
     "APP_ENV": {
@@ -25,7 +25,8 @@
       "required": true
     },
     "APP_KEY": {
-      "description": "Run php artisan key:generate to get app key",
+      "description": "Run php artisan key:generate to get new app key",
+      "value": "base64:cVyq8LqL5LPJdbqzQIoJQdSn+cFmi33xCV9nHWbaVkU=",
       "required": true
     },
     "APP_DEBUG": {
@@ -33,7 +34,7 @@
       "required": true
     },
     "APP_URL": {
-      "description": "This will be the URL generated from Heroku which is https://<appname>.herokuapp.com. E.g https://dsceksu.herokuapp.com",
+      "description": "Replace <herokuappname> with your appname. https://<herokuappname>.herokuapp.com. E.g https://dsceksu.herokuapp.com",
       "required": true
     }
   },
