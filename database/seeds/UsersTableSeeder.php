@@ -16,9 +16,10 @@ class UsersTableSeeder extends Seeder
       $lead = Role::where('name', 'lead')->first();
 
       $user = User::create([
-        'name' => 'Emmanuel Joseph (JET)',
-        'email' => 'emmanueljet774@gmail.com',
+        'name' => 'DSC Lead',
+        'email' => 'lead@dsc.com',
         'password' => bcrypt('password'),
+        'email_verified_at' => now()
       ]);
 
       $user->attachRole($lead);
