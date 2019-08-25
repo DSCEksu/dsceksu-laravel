@@ -7,6 +7,7 @@
 This awesome Laravel Progressive Web App was created for Developer Student Clubs in Sub Saharan Africa as a profile and a platform to showcase what they're upto in events, outreach to local businesses and showcases, maintain their community and most importantly their success stories to the world
 
 [![Heroku Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/DSCEksu/dsceksu-laravel)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FDSCEksu%2Fdsceksu-laravel.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FDSCEksu%2Fdsceksu-laravel?ref=badge_shield)
 
 ![Badge](https://img.shields.io/badge/Built%20by-DSC%20Sub%20Saharan%20Africa-brightgreen.svg)
 [![Heroku](https://heroku-badge.herokuapp.com/?app=dsceksu)](https://dsceksu.herokuapp.com)
@@ -14,3 +15,7 @@ This awesome Laravel Progressive Web App was created for Developer Student Clubs
 ![Issue](https://img.shields.io/github/issues/DSCEksu/dsceksu-laravel.svg)
 ![Maintenance](https://img.shields.io/maintenance/yes/2019.svg)
 ![Codacy Badge](https://api.codacy.com/project/badge/Grade/b07fd6723d9742d4b6990bbbd688ef85)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FDSCEksu%2Fdsceksu-laravel.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FDSCEksu%2Fdsceksu-laravel?ref=badge_large)
