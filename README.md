@@ -1,5 +1,5 @@
 <p align="center">
-<img alt="Developer Student Clubs" src="https://dsceksu.herokuapp.com/images/logo.png">
+<img alt="Developer Student Clubs" src="https://dsceksu.herokuapp.com/images/dsc-logo.png">
 </p>
 
 # DSC Laravel Template 🔥
@@ -50,7 +50,7 @@ Note you won't be able to change the images and run the project locally till you
   - Icons: Visit [https://realfavicongenerator.net](https://realfavicongenerator.net) to generate your PWA icons
   - Splash: Visit [https://appsco.pe/developer/splash-screens](https://appsco.pe/developer/splash-screens) to generate your PWA splashscreen
   - Rename icons and splash to fit the names at ``public/images/icons`` directory
-  - Change the ``dsc-footer.png`` image to your image while keeping the name as **dsc-footer.png**
+  - Change the ``logo.png`` image to your image while keeping the name as **logo.png**
 
 - get database information
   - After you have the ``Heroku Postgres`` addon installed, open the addon at the Resources tab

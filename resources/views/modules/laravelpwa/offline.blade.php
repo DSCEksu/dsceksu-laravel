@@ -1,8 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title')
-- Offline
-@endsection
+@section('title', '- Offline')
 
 @section('content')
   <header id="hero" class="hero">
@@ -12,7 +10,7 @@
           <div class="hero-content">
             <div class="hero-title__group">
               <div class="hero-title">
-                <h2 class="zuri">Developer Student Club<br> {{ config('app.school') }}.</h2>
+                <h2 class="zuri">Developer Student Club<br> {{ config('app.info.location') }}.</h2>
               </div>
               <div class="Hero--Subtitle">
                 <p class="lead">Developer Student Clubs is a
@@ -241,7 +239,7 @@
         </div>
       </div>
       <div class="mt-40 text-center">
-        <a href="mailto:dsceksu@gmail.com" class="hero-button">Send us an email</a>
+        <a href="mailto:{{ config('app.info.email') }}" class="hero-button">Send us an email</a>
       </div>
     </div>
   </section>

@@ -18,7 +18,15 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            return redirect('/home');
+          if(auth()->user()->hasRole('lead')) {
+            return redirect('/lead/dashboard');
+          } elseif(auth()->user()->hasRole('techcore')) {
+            return redirect('/techcore/dashboard');
+          } elseif (auth()->user()->hasRole('nontechcore')) {
+            return redirect('/nontechcore/dashboard');
+          } else {
+            return redirect('/member/dashboard');
+          }
         }
 
         return $next($request);

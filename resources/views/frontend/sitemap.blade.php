@@ -1,8 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title')
-- Sitemap
-@endsection
+@section('title','- Sitemap')
 
 @section('content')
   <section id="web" class="section-spacer">

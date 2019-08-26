@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+  @include('modules.analytics')
+  @laravelPWA
+  @include('modules.laravelpwa.meta')
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,9 +41,41 @@
   <meta name="twitter:image:src" content="{{ config('app.url') }}/images/icons/icon-512x512.png">
   <meta name="twitter:image:alt" content="{{ config('app.nick') }}">
 
-  @include('modules.analytics')
+  <!-- CORE STYLES-->
+  <link href="{{ asset('assets/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/line-awesome/css/line-awesome.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/themify-icons/css/themify-icons.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/animate.css/animate.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/toastr/toastr.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/backend/main.min.css') }}" rel="stylesheet">
+
+  <!-- PAGE LEVEL STYLES-->
+  @yield('css')
 </head>
 <body>
 
+  @yield('content')
+
+  <!-- BEGIN PAGA BACKDROPS-->
+  <div class="sidenav-backdrop backdrop"></div>
+  <div class="preloader-backdrop">
+    <div class="page-preloader"></div>
+  </div>
+  <!-- CORE PLUGINS & SCRIPT-->
+  <script src="{{ asset('assets/jquery/dist/jquery.min.js') }}"></script>
+  <script src="{{ asset('assets/popper.js/dist/umd/popper.min.js') }}"></script>
+  <script src="{{ asset('assets/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+  <script src="{{ asset('assets/metisMenu/dist/metisMenu.min.js') }}"></script>
+  <script src="{{ asset('assets/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
+  <script src="{{ asset('assets/jquery-idletimer/dist/idle-timer.min.js') }}"></script>
+  <script src="{{ asset('assets/toastr/toastr.min.js') }}"></script>
+  <script src="{{ asset('assets/jquery-validation/dist/jquery.validate.min.js') }}"></script>
+  <script src="{{ asset('assets/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
+  <script src="{{ asset('js/backend/app.min.js') }}"></script>
+
+  <!-- PAGE LEVEL PLUGINS & SCRIPT-->
+  @yield('js')
 </body>
 </html>

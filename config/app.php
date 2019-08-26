@@ -15,7 +15,13 @@ return [
 
     'name' => env('APP_NAME'),
     'nick' => env('APP_NICK'),
-    'school' => env('SCHOOL_NAME'),
+    'info' => [
+      'location' => env('APP_LOCATION'),
+      'email' => env('APP_EMAIL'),
+      'phone' => env('APP_PHONE'),
+      'twitter' => env('APP_TWITTER'),
+      'github' => env('APP_GITHUB')
+    ],
 
     /*
     |--------------------------------------------------------------------------

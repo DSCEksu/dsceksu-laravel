@@ -8,7 +8,7 @@
           <div class="hero-content">
             <div class="hero-title__group">
               <div class="hero-title">
-                <h2 class="zuri">Developer Student Club<br> {{ config('app.school') }}.</h2>
+                <h2 class="zuri">Developer Student Club<br> {{ config('app.info.location') }}.</h2>
               </div>
               <div class="Hero--Subtitle">
                 <p class="lead">Developer Student Clubs is a
@@ -266,7 +266,7 @@
                       <h6>VENUE : TechHub EKSU</h6>
                       <p>We learnt web and android development</p>
                     </div>
-                    <a href="#" class="past-event" target="_blank" rel="noopener">EVENT PHOTOS&nbsp;&nbsp;<i class="fas fa-camera"></i></a>
+                    <a href="#" class="past-event" rel="noopener">EVENT PHOTOS&nbsp;&nbsp;<i class="fas fa-camera"></i></a>
                   </div>
                 </div>
               </div>
@@ -284,7 +284,6 @@
                       <h6>WHERE : Lagos, Nigeria.</h6>
                       <p>One of our lead organizers was privileged to represent the community in a lead summit hosted by Google Nigeria where he also talked about goal-setting.</p>
                     </div>
-                    <a href="#" class="past-event" target="_blank" rel="noopener">EVENT PHOTOS&nbsp;&nbsp;<i class="fas fa-camera"></i></a>
                   </div>
                 </div>
                 <div class="col-sm-6">
@@ -517,7 +516,7 @@
         </div>
       </div>
       <div class="mt-40 text-center">
-        <a href="mailto:dsceksu@gmail.com" class="hero-button">Send us an email</a>
+        <a href="mailto:{{ config('app.info.email') }}" class="hero-button">Send us an email</a>
       </div>
     </div>
   </section>

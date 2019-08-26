@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+  @include('modules.analytics')
+  @laravelPWA
+  @include('modules.laravelpwa.meta')
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -49,17 +52,12 @@
 
   <link rel="stylesheet" href="{{ asset('css/frontend/styles.css') }}">
   <link rel="stylesheet" href="{{ asset('css/frontend/responsive.css') }}">
-
-  @include('modules.analytics')
-
-  @laravelPWA
-  @include('modules.laravelpwa.meta')
 </head>
 <body class="x-hidden has-sticky-header">
   <nav class="navbar navbar-expand-lg fixed-top custom-menu custom-menu__light">
     <div class="container">
       <a class="navbar-brand" href="{{ route('index') }}">
-        <img src="{{ asset('images/logo.png') }}" class="logo-sm" alt="{{ config('app.nick') }}">
+        <img src="{{ asset('images/dsc-logo.png') }}" class="logo-sm" alt="{{ config('app.nick') }}">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="menu-icon__circle"></span>
@@ -99,18 +97,18 @@
       <div class="row flex-column-reverse flex-sm-row flex-lg-row">
         <div class="col-md-4 col-12">
           <div class="footer-widget first-of-footer-widget">
-            <img src="{{ asset('images/dsc-footer.png') }}" class="logo-sm mb-10" alt="{{ config('app.name') }}">
+            <img src="{{ asset('images/logo.png') }}" class="logo-sm mb-10" alt="{{ config('app.name') }}">
             <p>&copy; {{ date('Y') }} | All Rights Reserved.</p>
             <span>Feel free to drop us an email at </span>
-            <a href="mailto:dsceksu@gmail.com">dsceksu@gmail.com</a>
+            <a href="mailto:{{ config('app.info.email') }}">{{ config('app.info.email') }}</a>
             <ul class="social-list__inline mt-10">
               <li>
-                <a href="https://twitter.com/DscEksu" target="_blank" rel="noopener">
+                <a href="{{ config('app.info.twitter') }}" target="_blank" rel="noopener">
                   <i class="fab fa-twitter"></i>
                 </a>
               </li>
               <li>
-                <a href="https://github.com/DscEksu" target="_blank" rel="noopener">
+                <a href="{{ config('app.info.github') }}" target="_blank" rel="noopener">
                   <i class="fab fa-github"></i>
                 </a>
               </li>
@@ -168,7 +166,7 @@
                     <a href="https://github.com/DSCEksu/dsceksu-laravel" target="_blank" rel="noreferrer">View source</a>
                   </li>
                   <li>
-                    <a href="javascript:;" onclick="share('{{ config('app.name') }}', '{{ config('app.url') }}', 'Have you been looking for a place you can learn technical skills for free? If yes, check out {{ config('app.nick') }} now at {{ config('app.school') }}')"><i class="fa fa-share"></i> Share</a> <div id="share-loader"><div class="spinner-grow"></div></div>
+                    <a href="javascript:;" onclick="share('{{ config('app.name') }}', '{{ config('app.url') }}', 'Have you been looking for a place you can learn technical skills for free? If yes, check out {{ config('app.nick') }} now at {{ config('app.info.location') }}')"><i class="fa fa-share"></i> Share</a> <div id="share-loader"><div class="spinner-grow"></div></div>
                   </li>
                 </ul>
               </div>
