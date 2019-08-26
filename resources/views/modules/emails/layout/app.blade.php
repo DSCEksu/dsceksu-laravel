@@ -120,7 +120,7 @@
 																				<tr>
 																					<td class="img" style="font-size:0pt; line-height:0pt; text-align:center">
 																						<!-- Logo -->
-																						<div class="img-m-center" style="font-size:0pt; line-height:0pt; text-align:center"><a href="{{ config('app.url') }}" target="_blank"><img src="{{ config('app.url') }}/images/dsc-logo.png" border="0" /></a></div>
+																						<div class="img-m-center" style="font-size:0pt; line-height:0pt; text-align:center"><a href="{{ config('app.url') }}" target="_blank"><img src="{{ config('app.url') }}/images/dsc-logo.png" border="0" alt="Developer Student Club"/></a></div>
 																						<!-- END Logo -->
 																						<div style="font-size:0pt; line-height:0pt;" class="mobile-br-20"></div>
 
@@ -175,7 +175,7 @@
 																	<tr>
 																		<td class="img" style="font-size:0pt; line-height:0pt; text-align:left">
 																			<!-- Footer Logo -->
-																			<div class="img-m-center" style="font-size:0pt; line-height:0pt; text-align:left"><a href="#" target="_blank"><img src="{{ config('app.url') }}/images/logo.png" border="0" width="239" height="27" alt="" /></a></div>
+																			<div class="img-m-center" style="font-size:0pt; line-height:0pt; text-align:left"><a href="#" target="_blank"><img src="{{ config('app.url') }}/images/logo.png" border="0" alt="{{ config('app.name') }}" /></a></div>
 																			<!-- END Footer Logo -->
 																			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%"><tr><td height="20" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">&nbsp;</td></tr></table>
 

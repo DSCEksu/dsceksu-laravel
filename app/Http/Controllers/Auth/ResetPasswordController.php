@@ -24,7 +24,7 @@ class ResetPasswordController extends Controller
      * Check user's role and redirect user based on their role after resetting password
      * @return
      */
-    public function authenticated(){
+    public function redirectTo(){
       if(auth()->user()->hasRole('lead')) {
         return redirect('/lead/dashboard');
       } elseif(auth()->user()->hasRole('techcore')) {

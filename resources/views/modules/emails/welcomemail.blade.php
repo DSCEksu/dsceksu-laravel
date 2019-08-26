@@ -24,7 +24,7 @@
                   <td class="img" style="font-size:0pt; line-height:0pt; text-align:left" width="20">
                     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%"><tr><td height="3" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">&nbsp;</td></tr></table>
 
-                    <img src="{{ config('app.url') }}/images/bullet.png" border="0" width="11" height="11" alt="" />
+                    <img src="{{ config('app.url') }}/images/email/bullet.png" border="0" width="11" height="11" alt="" />
                   </td>
                   <td class="text3" style="color:#55544d; font-family:'Google Sans', sans-serif; font-size:14px; line-height:24px; text-align:left">
                     Verify Your Email Address through the verification email sent to {{ $user->email }}
@@ -39,7 +39,7 @@
                   <td class="img" style="font-size:0pt; line-height:0pt; text-align:left" width="20">
                     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%"><tr><td height="3" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">&nbsp;</td></tr></table>
 
-                    <img src="{{ config('app.url') }}/images/bullet.png" border="0" width="11" height="11" alt="" />
+                    <img src="{{ config('app.url') }}/images/email/bullet.png" border="0" width="11" height="11" alt="" />
                   </td>
                   <td class="text3" style="color:#55544d; font-family:'Google Sans', sans-serif; font-size:14px; line-height:24px; text-align:left">
                     Complete your profile on your dashboard so you can be attached to a mentor
@@ -53,7 +53,7 @@
                   <td class="img" style="font-size:0pt; line-height:0pt; text-align:left" width="20">
                     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%"><tr><td height="3" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">&nbsp;</td></tr></table>
 
-                    <img src="{{ config('app.url') }}/images/bullet.png" border="0" width="11" height="11" alt="" />
+                    <img src="{{ config('app.url') }}/images/email/bullet.png" border="0" width="11" height="11" alt="" />
                   </td>
                   <td class="text3" style="color:#55544d; font-family:'Google Sans', sans-serif; font-size:14px; line-height:24px; text-align:left">
                     Start Learning and building awesome applications
