@@ -175,7 +175,7 @@
 																	<tr>
 																		<td class="img" style="font-size:0pt; line-height:0pt; text-align:left">
 																			<!-- Footer Logo -->
-																			<div class="img-m-center" style="font-size:0pt; line-height:0pt; text-align:left"><a href="#" target="_blank"><img src="{{ config('app.url') }}/images/logo.png" border="0" alt="{{ config('app.name') }}" /></a></div>
+																			<div class="img-m-center" style="font-size:0pt; line-height:0pt; text-align:left"><a href="#" target="_blank"><img src="{{ config('app.url') }}/images/logo.png" border="0" alt="{{ config('app.name') }}" style="max-width:200px" /></a></div>
 																			<!-- END Footer Logo -->
 																			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%"><tr><td height="20" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">&nbsp;</td></tr></table>
 
