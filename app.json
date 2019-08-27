@@ -16,8 +16,8 @@
       "description": "Your App Nick. E.g DSC EKSU",
       "required": true
     },
-    "SCHOOL_NAME": {
-      "description": "Your School Name. E.g Ekiti State University",
+    "APP_LOCATION": {
+      "description": "Your Location/School Name. E.g Ekiti State University",
       "required": true
     },
     "APP_ENV": {
