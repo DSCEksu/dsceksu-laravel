@@ -9,13 +9,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
   <title>{{ Request::is('/') ? config('app.name') : config('app.nick') }} @yield('title')</title>
-  
-  @include('modules.seo')
+
+  @include('modules.seometa')
 
   <link rel="stylesheet" href="{{ asset('css/frontend/responsive.css') }}">
   <link rel="stylesheet" href="{{ asset('css/frontend/assets/owl.carousel.min.css') }}">
   <link rel="stylesheet" href="{{ asset('css/frontend/assets/bootstrap.min.css') }}">
-  <link rel="dns-prefetch" href="https://docs.google.com">
+  <link rel="dns-prefetch" href="//docs.google.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
   <link href='https://fonts.googleapis.com/css?family=Google+Sans:400,500,700|Material+Icons' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
@@ -48,7 +49,6 @@
     });
 
     async function share(title, url, text) {
-      $("#share-loader").show();
       if (window.Windows) {
         const DataTransferManager = window.Windows.ApplicationModel.DataTransfer.DataTransferManager;
 
@@ -78,7 +78,6 @@
           return false;
         }
       }
-      $("#share-loader").hide();
     }
   </script>
 
