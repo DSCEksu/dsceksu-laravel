@@ -19,6 +19,7 @@ return [
       'location' => env('APP_LOCATION'),
       'email' => env('APP_EMAIL'),
       'phone' => env('APP_PHONE'),
+      'blog' => env('APP_BLOG'),
       'twitter' => env('APP_TWITTER'),
       'github' => env('APP_GITHUB')
     ],

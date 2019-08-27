@@ -1,25 +1,35 @@
-<section id="technologies" class="section-spacer bg-very__gray">
-    <div class="container">
-      <header class="section-header text-center">
-        <h2 class="section-title">Technologies we're excited about</h2>
-        <p class="section-subtitle">Opportunities to learn & access deep technical content.</p>
-        <br>
-      </header>
-      <div class="row align-items-center">
-        <div class="col-sm-6">
-          <div class="feature-list-image">
-            <img src="{{ asset('images/frontend/technologies/android.png') }}" class="img-fluid" alt="Official android logo" width="100%" height="50%">
-          </div>
+<nav class="navbar navbar-expand-lg fixed-top custom-menu custom-menu__light">
+  <div class="container">
+    <a class="navbar-brand" href="{{ route('index') }}">
+      <img src="{{ asset('images/dsc-logo.png') }}" class="logo-sm" alt="{{ config('app.nick') }}">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="menu-icon__circle"></span>
+      <span class="menu-icon">
+        <span class="menu-icon__bar"></span>
+        <span class="menu-icon__bar"></span>
+        <span class="menu-icon__bar"></span>
+      </span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      @if (Request::is('offline'))
+        <div class="custom-menu__right">
+          <a href="#offlineModal" data-toggle="modal" class="event-btn"><i class="fa fa-users"></i> Become a member</a>
         </div>
-        <div class="col-sm-5 ml-auto">
-          <div class="feature-list-wrapper">
-            <div class="content-header">
-              <h2 class="content-title">Android Development</h2>
-              <p>Every year Google developers release exciting new updates to the world's most popular operating system. We always have sessions to keep you updated and mastering the latest trends in modern Android development.</p>
-            </div>
-            <a href="https://codelabs.developers.google.com/?cat=Android" class="hero-button" target="_blank" rel="noreferrer">Codelabs &nbsp; &nbsp;<i class="fas fa-external-link-alt"></i></a>
-          </div>
+      @else
+        <ul class="navbar-nav ml-lg-auto">
+          <li class="nav-item {{ Request::is('/') ? 'active' : '' }}"><a class="nav-link" href="{{ route('index') }}#overview">Overview</a></li>
+          <li class="nav-item"><a href="{{ route('index') }}#technologies" class="nav-link">Technologies</a></li>
+          <li class="nav-item {{ Request::is('learn') ? 'active' : '' }}"><a href="{{ route('learn') }}" class="nav-link">Learn</a></li>
+          <li class="nav-item {{ Request::is('projects') ? 'active' : '' }}"><a href="{{ route('projects') }}" class="nav-link">Projects</a></li>
+          <li class="nav-item"><a href="{{ route('index') }}#workshops" class="nav-link">Workshops</a></li>
+          <li class="nav-item"><a href="{{ route('index') }}#team" class="nav-link">Team</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ config('app.info.blog') }}" target="_blank" rel="follow">Stories</a></li>
+        </ul>
+        <div class="custom-menu__right">
+          <a href="{{ route('register') }}" class="event-btn"><i class="fa fa-users"></i> Become a member</a>
         </div>
-      </div>
+      @endif
     </div>
-  </section>
+  </div>
+</nav>
