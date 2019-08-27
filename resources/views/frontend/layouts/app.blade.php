@@ -54,6 +54,13 @@
   <link rel="stylesheet" href="{{ asset('css/frontend/responsive.css') }}">
 </head>
 <body class="x-hidden has-sticky-header">
+<<<<<<< HEAD
+  @include('frontend.includes.nav')
+
+  @yield('content')
+
+  @include('frontend.includes.footer')
+=======
   <nav class="navbar navbar-expand-lg fixed-top custom-menu custom-menu__light">
     <div class="container">
       <a class="navbar-brand" href="{{ route('index') }}">
@@ -176,6 +183,7 @@
       </div>
     </div>
   </footer>
+>>>>>>> master
   <a href="#" id="scroll" style="display: none;"><i class="fas fa-angle-up"></i></a>
 
   <script>
