@@ -26,13 +26,13 @@ class VerificationController extends Controller
      */
     public function redirectTo() {
       if(auth()->user()->hasRole('lead')) {
-        return redirect('/lead/dashboard');
+        return '/lead/dashboard';
       } elseif(auth()->user()->hasRole('techcore')) {
-        return redirect('/techcore/dashboard');
+        return '/techcore/dashboard';
       } elseif (auth()->user()->hasRole('nontechcore')) {
-        return redirect('/nontechcore/dashboard');
+        return '/nontechcore/dashboard';
       } else {
-        return redirect('/member/dashboard');
+        return '/member/dashboard';
       }
     }
 
