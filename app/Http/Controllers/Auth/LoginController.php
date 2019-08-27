@@ -21,11 +21,21 @@ class LoginController extends Controller
     use AuthenticatesUsers;
 
     /**
-     * Where to redirect users after login.
-     *
-     * @var string
+     * Check user's role and redirect user based on their role
+     * @return
      */
-    protected $redirectTo = '/home';
+    public function authenticated()
+    {
+      if(auth()->user()->hasRole('lead')) {
+        return redirect('/lead/dashboard');
+      } elseif(auth()->user()->hasRole('techcore')) {
+        return redirect('/techcore/dashboard');
+      } elseif (auth()->user()->hasRole('nontechcore')) {
+        return redirect('/nontechcore/dashboard');
+      } else {
+        return redirect('/member/dashboard');
+      }
+    }
 
     /**
      * Create a new controller instance.

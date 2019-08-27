@@ -21,11 +21,20 @@ class VerificationController extends Controller
     use VerifiesEmails;
 
     /**
-     * Where to redirect users after verification.
-     *
-     * @var string
+     * Check user's role and redirect user based on their role after resetting password
+     * @return
      */
-    protected $redirectTo = '/home';
+    public function redirectTo() {
+      if(auth()->user()->hasRole('lead')) {
+        return redirect('/lead/dashboard');
+      } elseif(auth()->user()->hasRole('techcore')) {
+        return redirect('/techcore/dashboard');
+      } elseif (auth()->user()->hasRole('nontechcore')) {
+        return redirect('/nontechcore/dashboard');
+      } else {
+        return redirect('/member/dashboard');
+      }
+    }
 
     /**
      * Create a new controller instance.

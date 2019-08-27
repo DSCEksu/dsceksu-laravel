@@ -20,14 +20,14 @@ class RolesTableSeeder extends Seeder
           'updated_at' => now()
         ],
         [
-          'name' => 'coreteam',
+          'name' => 'techcore',
           'display_name' => 'Technical Core Team Member',
           'description' => 'DSC Technical Core Team Member',
           'created_at' => now(),
           'updated_at' => now()
         ],
         [
-          'name' => 'noncoreteam',
+          'name' => 'nontechcore',
           'display_name' => 'Non-Technical Core Team Member',
           'description' => 'DSC Non-Technical Core Team Member',
           'created_at' => now(),

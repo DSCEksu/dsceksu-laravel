@@ -1,8 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title')
-- Learn
-@endsection
+@section('title', '- Learn')
 
 @section('content')
   <section id="web" class="section-spacer">
