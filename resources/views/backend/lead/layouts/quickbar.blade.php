@@ -24,7 +24,7 @@
                   <div class="media-list">
                       <a class="media" href="javascript:;" data-toggle="show-chat">
                           <div class="media-img">
-                              <img class="img-circle" src="assets\img\users\u3.jpg" alt="image" width="40">
+                              <img class="img-circle" src="{{ asset('images/backend') }}/users/u3.jpg" alt="image" width="40">
                           </div>
                           <div class="media-body"><small class="float-right text-muted">12:05</small>
                               <div class="media-heading">Frank Cruz</div>
@@ -33,7 +33,7 @@
                       </a>
                       <a class="media" href="javascript:;" data-toggle="show-chat">
                           <div class="media-img">
-                              <img class="img-circle" src="assets\img\users\u8.jpg" alt="image" width="40">
+                              <img class="img-circle" src="{{ asset('images/backend') }}/users/u8.jpg" alt="image" width="40">
                           </div>
                           <div class="media-body"><small class="float-right text-right text-success"><i class="badge-point badge-success mr-2"></i>12:05<br><span class="badge badge-danger badge-circle">3</span></small>
                               <div class="media-heading">Lynn Weaver</div>
@@ -42,7 +42,7 @@
                       </a>
                       <a class="media" href="javascript:;" data-toggle="show-chat">
                           <div class="media-img">
-                              <img class="img-circle" src="assets\img\users\u2.jpg" alt="image" width="40">
+                              <img class="img-circle" src="{{ asset('images/backend') }}/users/u2.jpg" alt="image" width="40">
                           </div>
                           <div class="media-body"><small class="float-right text-muted">12:05</small>
                               <div class="media-heading">Becky Brooks</div>
@@ -51,7 +51,7 @@
                       </a>
                       <a class="media" href="javascript:;" data-toggle="show-chat">
                           <div class="media-img">
-                              <img class="img-circle" src="assets\img\users\u5.jpg" alt="image" width="40">
+                              <img class="img-circle" src="{{ asset('images/backend') }}/users/u5.jpg" alt="image" width="40">
                           </div>
                           <div class="media-body"><small class="float-right text-muted">12:05</small>
                               <div class="media-heading">Bob Gonzalez</div>
@@ -60,7 +60,7 @@
                       </a>
                       <a class="media" href="javascript:;" data-toggle="show-chat">
                           <div class="media-img">
-                              <img class="img-circle" src="assets\img\users\u6.jpg" alt="image" width="40">
+                              <img class="img-circle" src="{{ asset('images/backend') }}/users/u6.jpg" alt="image" width="40">
                           </div>
                           <div class="media-body"><small class="float-right text-right text-success"><i class="badge-point badge-success mr-2"></i>12:05</small>
                               <div class="media-heading">Connor Perez</div>
@@ -69,7 +69,7 @@
                       </a>
                       <a class="media" href="javascript:;" data-toggle="show-chat">
                           <div class="media-img">
-                              <img class="img-circle" src="assets\img\users\u11.jpg" alt="image" width="40">
+                              <img class="img-circle" src="{{ asset('images/backend') }}/users/u11.jpg" alt="image" width="40">
                           </div>
                           <div class="media-body"><small class="float-right text-muted">12:05</small>
                               <div class="media-heading">Tyrone Carroll</div>
@@ -78,7 +78,7 @@
                       </a>
                       <a class="media" href="javascript:;" data-toggle="show-chat">
                           <div class="media-img">
-                              <img class="img-circle" src="assets\img\users\u9.jpg" alt="image" width="40">
+                              <img class="img-circle" src="{{ asset('images/backend') }}/users/u9.jpg" alt="image" width="40">
                           </div>
                           <div class="media-body"><small class="float-right text-right text-success"><i class="badge-point badge-success mr-2"></i>12:05<br><span class="badge badge-danger badge-circle">1</span></small>
                               <div class="media-heading">Tammy Newman</div>
@@ -87,7 +87,7 @@
                       </a>
                       <a class="media" href="javascript:;" data-toggle="show-chat">
                           <div class="media-img">
-                              <img class="img-circle" src="assets\img\users\u1.jpg" alt="image" width="40">
+                              <img class="img-circle" src="{{ asset('images/backend') }}/users/u1.jpg" alt="image" width="40">
                           </div>
                           <div class="media-body"><small class="float-right text-muted">12:05</small>
                               <div class="media-heading">Jeanne Gonzalez</div>
@@ -96,7 +96,7 @@
                       </a>
                       <a class="media" href="javascript:;" data-toggle="show-chat">
                           <div class="media-img">
-                              <img class="img-circle" src="assets\img\users\u10.jpg" alt="image" width="40">
+                              <img class="img-circle" src="{{ asset('images/backend') }}/users/u10.jpg" alt="image" width="40">
                           </div>
                           <div class="media-body"><small class="float-right text-muted">12:05</small>
                               <div class="media-heading">Stella Obrien</div>
@@ -105,7 +105,7 @@
                       </a>
                       <a class="media" href="javascript:;" data-toggle="show-chat">
                           <div class="media-img">
-                              <img class="img-circle" src="assets\img\users\u7.jpg" alt="image" width="40">
+                              <img class="img-circle" src="{{ asset('images/backend') }}/users/u7.jpg" alt="image" width="40">
                           </div>
                           <div class="media-body"><small class="float-right text-muted">12:05</small>
                               <div class="media-heading">Jeanne Smith</div>
@@ -141,7 +141,7 @@
                   <div class="scroller">
                       <div class="messenger-message">
                           <div class="message-image">
-                              <img src="assets\img\users\u8.jpg" alt="image">
+                              <img src="{{ asset('images/backend') }}/users/u8.jpg" alt="image">
                           </div>
                           <div class="message-body">Hi Jack. You are comfortable today.</div>
                       </div>
@@ -150,7 +150,7 @@
                       </div>
                       <div class="messenger-message">
                           <div class="message-image">
-                              <img src="assets\img\users\u8.jpg" alt="image">
+                              <img src="{{ asset('images/backend') }}/users/u8.jpg" alt="image">
                           </div>
                           <div class="message-body">Hi. What is your main principle in work.</div>
                       </div>
@@ -160,24 +160,7 @@
                       <div class="message-time">4.30 PM</div>
                       <div class="messenger-message">
                           <div class="message-image">
-                              <img src="assets\img\users\u8.jpg" alt="image">
-                          </div>
-                          <div class="message-body">
-                              <p>Here are some beautiful photos.</p>
-                              <div class="mb-3">
-                                  <img src="assets\img\blog\culinary-1.jpeg" alt="image">
-                              </div>
-                              <div>
-                                  <img src="assets\img\blog\01.jpeg" alt="image">
-                              </div>
-                          </div>
-                      </div>
-                      <div class="messenger-message messenger-message-answer">
-                          <div class="message-body">Thanks, they are beautiful.</div>
-                      </div>
-                      <div class="messenger-message">
-                          <div class="message-image">
-                              <img src="assets\img\users\u8.jpg" alt="image">
+                              <img src="{{ asset('images/backend') }}/users/u8.jpg" alt="image">
                           </div>
                           <div class="message-body">How many hours are you comfortable.</div>
                       </div>

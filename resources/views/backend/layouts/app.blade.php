@@ -24,32 +24,35 @@
   <!-- PAGE LEVEL STYLES-->
   @yield('css')
 </head>
-<body>
-  @auth
-    @include('backend.layouts.navbar.headbar')
-    @include('backend.layouts.navbar.sidebar')
- 
-    <div class="content-wrapper">
-      <!-- START PAGE CONTENT-->
-      @yield('content')
-      <!-- END PAGE CONTENT-->
-      <footer class="page-footer">
-        <div class="font-13">&copy; {{ date('Y') }} <b>{{ config('app.name') }}</b></div>
-        <div>
-          <a class="px-3 pl-4" href="javascript:;" onclick="share('{{ config('app.name') }}', '{{ config('app.url') }}', 'Have you been looking for a place you can learn technical skills for free? If yes, check out {{ config('app.nick') }} now at {{ config('app.info.location') }}')"><i class="fa fa-share"></i> Share</a>
-          <a class="px-3 btn btn-soc-github btn-icon-only btn-circle" href="{{ config('app.info.github') }}" target="_blank"><i class="fa fa-github"></i></a>
-          <a class="px-3 btn btn-soc-twitter btn-icon-only btn-circle" href="{{ config('app.info.twitter') }}" target="_blank"><i class="fa fa-twitter"></i></a>
-        </div>
-        <div class="to-top"><i class="fa fa-angle-double-up"></i></div>
-      </footer>
-    </div>
-  @else
+<body class="{{ auth()->check() ? 'fixed-navbar' : '' }}">
+
+  @guest
     @yield('content')
-  @endauth
+  @endguest
 
   @auth
+    <div class="page-wrapper">
+      @include('backend.layouts.navbar.headbar')
+      @include('backend.layouts.navbar.sidebar')
+
+      <div class="content-wrapper">
+        <!-- START PAGE CONTENT-->
+        @yield('content')
+        <!-- END PAGE CONTENT-->
+        <footer class="page-footer">
+          <div class="font-13">&copy; {{ date('Y') }} <b>{{ config('app.name') }}</b></div>
+          <div>
+            <a class="px-3 pl-4" href="javascript:;" onclick="share('{{ config('app.name') }}', '{{ config('app.url') }}', 'Have you been looking for a place you can learn technical skills for free? If yes, check out {{ config('app.nick') }} now at {{ config('app.info.location') }}')"><i class="fa fa-share"></i> Share</a>
+            <a class="px-3 btn btn-soc-github btn-icon-only btn-circle" href="{{ config('app.info.github') }}" target="_blank"><i class="fa fa-github"></i></a>
+            <a class="px-3 btn btn-soc-twitter btn-icon-only btn-circle" href="{{ config('app.info.twitter') }}" target="_blank"><i class="fa fa-twitter"></i></a>
+          </div>
+          <div class="to-top"><i class="fa fa-angle-double-up"></i></div>
+        </footer>
+      </div>
+    </div>
     @include('backend.includes.search')
     @include('backend.includes.theme')
+    @include('backend.includes.timeout')
     @include('backend.layouts.navbar.quickbar')
   @endauth
 

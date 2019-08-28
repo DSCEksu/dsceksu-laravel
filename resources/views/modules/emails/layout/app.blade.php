@@ -163,7 +163,7 @@
 										<!-- Footer Inner -->
 										<table width="100%" border="0" cellspacing="0" cellpadding="0">
 											<tr>
-												<td class="content-spacing" style="font-size:0pt; line-height:0pt; text-align:left" width="30"></td>
+												<td class="content-spacing" style="font-size:0pt; line-height:0pt; text-align:center" width="30"></td>
 												<td>
 													<table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%"><tr><td height="30" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">&nbsp;</td></tr></table>
 
@@ -173,7 +173,7 @@
 															<th class="column" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; Margin:0" width="276" valign="top">
 																<table width="100%" border="0" cellspacing="0" cellpadding="0">
 																	<tr>
-																		<td class="img" style="font-size:0pt; line-height:0pt; text-align:left">
+																		<td class="img" style="font-size:0pt; line-height:0pt; text-align:center">
 																			<!-- Footer Logo -->
                                     <div class="img-m-center" style="font-size:0pt; line-height:0pt; text-align:center"><a href="{{ config('app.url') }}" target="_blank"><img src="{{ config('app.url') }}/images/logo.png" border="0" alt="{{ config('app.name') }}" style="max-width:200px" /></a></div>
 																			<!-- END Footer Logo -->

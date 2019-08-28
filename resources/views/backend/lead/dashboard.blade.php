@@ -2,8 +2,12 @@
 
 @section('title', '- Dashboard')
 
+@section('css')
+  <link href="{{ asset('assets/jvectormap/jquery-jvectormap-2.0.3.css') }}" rel="stylesheet">
+@endsection
+
 @section('content')
-<div class="page-content fade-in-up">
+  <div class="page-content fade-in-up">
     <div class="row mb-4">
         <div class="col-lg-4 col-md-6">
             <div class="card mb-4">
@@ -859,7 +863,7 @@
 @endsection
 
 @section('js')
-<script src="{{ asset('assets/chart.js/dist/Chart.min.js') }}"></script>
+<script src="{{ asset('assets/chart.js/dist/chart.min.js') }}"></script>
 <script src="{{ asset('assets/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js') }}"></script>
 <script src="{{ asset('assets/jvectormap/jquery-jvectormap-2.0.3.min.js') }}"></script>
 <script src="{{ asset('jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>

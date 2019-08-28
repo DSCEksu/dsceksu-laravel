@@ -2,6 +2,12 @@
 
 @section('title', '- Dashboard')
 
+@section('css')
+  <link href="{{ asset('assets/fullcalendar/dist/fullcalendar.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/fullcalendar/dist/fullcalendar.print.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/smalot-bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">
+@endsection
+
 @section('content')
 <div class="page-content fade-in-up">
     <div class="row">
@@ -1099,7 +1105,7 @@
 @endsection
 
 @section('js')
-<script src="{{ asset('assets/chart.js/dist/Chart.min.js') }}"></script>
+<script src="{{ asset('assets/chart.js/dist/chart.min.js') }}"></script>
 <script src="{{ asset('assets/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js') }}"></script>
 <script src="{{ asset('assets/moment/min/moment.min.js') }}"></script>
 <script src="{{ asset('assets/fullcalendar/dist/fullcalendar.min.js') }}"></script>
