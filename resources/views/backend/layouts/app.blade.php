@@ -19,10 +19,11 @@
   <link href="{{ asset('assets/animate.css/animate.min.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/toastr/toastr.min.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/backend/main.min.css') }}" rel="stylesheet">
 
   <!-- PAGE LEVEL STYLES-->
   @yield('css')
+
+  <link href="{{ asset('css/backend/main.min.css') }}" rel="stylesheet">
 </head>
 <body class="{{ auth()->check() ? 'fixed-navbar' : '' }}">
 
@@ -75,6 +76,10 @@
   <script src="{{ asset('assets/toastr/toastr.min.js') }}"></script>
   <script src="{{ asset('assets/jquery-validation/dist/jquery.validate.min.js') }}"></script>
   <script src="{{ asset('assets/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
+
+  <!-- PAGE LEVEL PLUGINS & SCRIPT-->
+  @yield('js')
+  
   <script src="{{ asset('js/backend/app.min.js') }}"></script>
   <script>
     async function share(title, url, text) {
@@ -109,8 +114,5 @@
       }
     }
   </script>
-
-  <!-- PAGE LEVEL PLUGINS & SCRIPT-->
-  @yield('js')
 </body>
 </html>
