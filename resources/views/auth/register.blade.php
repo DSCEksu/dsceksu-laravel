@@ -1,73 +1,93 @@
-@extends('backend.layouts.app')
+@extends('backend.layouts.app', ['class' => 'bg-default'])
 
 @section('title', '- Register')
 
-@section('css')
-  <style>
-    body {
-      background-color: #f2f3fa;
-    }
-    .login-content {
-      max-width: 500px;
-      margin: 70px auto 50px;
-      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
-    }
-  </style>
-@endsection
-
 @section('content')
-  <div class="ibox login-content">
-    <br>
-    <div class="text-center">
-      <p>
-        <a href="{{ route('google') }}" class="btn btn-soc-google btn-fix btn-labeled btn-labeled-left">
-          <span class="btn-label"><i class="fa fa-google-plus"></i></span>Continue with Google
-        </a>
-      </p>
-      <p>
-        <a href="{{ route('github') }}" class="btn btn-soc-github btn-fix btn-labeled btn-labeled-left">
-          <span class="btn-label"><i class="fa fa-github"></i></span>Continue with GitHub
-        </a>
-      </p>
+  @include('backend.layouts.headers.guest')
+
+  <div class="container mt--8 pb-5">
+    <!-- Table -->
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-8">
+        <div class="card bg-secondary shadow border-0">
+          <div class="card-header bg-transparent pb-5">
+            <div class="text-muted text-center mt-2 mb-4"><small>{{ __('Sign up with') }}</small></div>
+            <div class="text-center">
+              <a href="{{ route('github') }}" class="btn btn-neutral btn-icon mr-4">
+                <span class="btn-inner--icon"><img src="{{ asset('argon') }}/img/icons/common/github.svg"></span>
+                <span class="btn-inner--text">{{ __('Github') }}</span>
+              </a>
+              <a href="{{ route('google') }}" class="btn btn-neutral btn-icon">
+                <span class="btn-inner--icon"><img src="{{ asset('argon') }}/img/icons/common/google.svg"></span>
+                <span class="btn-inner--text">{{ __('Google') }}</span>
+              </a>
+              <a href="{{ route('facebook') }}" class="btn btn-neutral btn-icon">
+                <span class="btn-inner--icon"><img src="{{ asset('argon') }}/img/icons/common/facebook.svg"></span>
+                <span class="btn-inner--text">{{ __('Facebook') }}</span>
+              </a>
+            </div>
+          </div>
+          <div class="card-body px-lg-5 py-lg-5">
+            <div class="text-center text-muted mb-4">
+              <small>{{ __('Or sign up with credentials') }}</small>
+            </div>
+            <form role="form" method="POST" action="{{ route('register') }}">
+              @csrf
+
+              <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                  </div>
+                  <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" type="text" name="name" value="{{ old('name') }}" required autofocus>
+                </div>
+                @if ($errors->has('name'))
+                  <span class="invalid-feedback" style="display: block;" role="alert">
+                    <strong>{{ $errors->first('name') }}</strong>
+                  </span>
+                @endif
+              </div>
+              <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                  </div>
+                  <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}" type="email" name="email" value="{{ old('email') }}" required>
+                </div>
+                @if ($errors->has('email'))
+                  <span class="invalid-feedback" style="display: block;" role="alert">
+                    <strong>{{ $errors->first('email') }}</strong>
+                  </span>
+                @endif
+              </div>
+              <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                  </div>
+                  <input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('Password') }}" type="password" name="password" required>
+                </div>
+                @if ($errors->has('password'))
+                  <span class="invalid-feedback" style="display: block;" role="alert">
+                    <strong>{{ $errors->first('password') }}</strong>
+                  </span>
+                @endif
+              </div>
+              <div class="form-group">
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="{{ __('Confirm Password') }}" type="password" name="password_confirmation" required>
+                </div>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary mt-4">{{ __('Create account') }}</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-    <form class="ibox-body" method="POST" action="{{ route('register') }}">
-      @csrf
-
-      <h4 class="font-strong text-center mb-3">Register</h4>
-
-      <div class="form-group mb-4">
-        <input id="name" class="form-control @error('name') is-invalid @enderror form-control-air" type="name" name="name" placeholder="Full Name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-        @error('name')
-          <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-          </span>
-        @enderror
-      </div>
-      <div class="form-group mb-4">
-        <input id="email" class="form-control @error('email') is-invalid @enderror form-control-air" type="email" name="email" placeholder="Email Address" value="{{ old('email') }}" required autocomplete="email" autofocus>
-        @error('email')
-          <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-          </span>
-        @enderror
-      </div>
-      <div class="form-group mb-4">
-        <input id="password" class="form-control @error('password') is-invalid @enderror form-control-air" type="password" name="password" placeholder="Password" required autocomplete="new-password">
-        @error('password')
-          <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-          </span>
-        @enderror
-      </div>
-      <div class="form-group mb-4">
-        <input id="password-confirm" class="form-control form-control-air" type="password" name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password">
-      </div>
-      <div class="text-center">
-        <button type="submit" class="btn btn-primary btn-rounded btn-block btn-air">REGISTER</button>
-      </div><br>
-      <div class="text-center">
-        Already Have An Account? <a href="{{ route('login') }}" class="btn btn-secondary btn-rounded btn-sm">Login Here</a>
-      </div>
-    </form>
   </div>
 @endsection

@@ -1,91 +1,88 @@
-@extends('backend.layouts.app')
+@extends('backend.layouts.app', ['class' => 'bg-default'])
 
 @section('title', '- Login')
 
-@section('css')
-  <style>
-    body {
-      background-color: #f2f3fa;
-    }
-    .login-content {
-      max-width: 400px;
-      margin: 70px auto 50px;
-      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
-    }
-    .auth-head-icon {
-      position: relative;
-      height: 60px;
-      width: 60px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-      background-color: #fff;
-      color: #5c6bc0;
-      box-shadow: 0 5px 20px #d6dee4;
-      border-radius: 50%;
-      transform: translateY(-50%);
-      z-index: 2;
-    }
-  </style>
-@endsection
-
 @section('content')
-  <div class="ibox login-content">
-    <div class="text-center">
-      <span class="auth-head-icon"><i class="la la-user"></i></span>
-      <p>
-        <a href="{{ route('google') }}" class="btn btn-soc-google btn-fix btn-labeled btn-labeled-left">
-          <span class="btn-label"><i class="fa fa-google-plus"></i></span>Continue with Google
-        </a>
-      </p>
-      <p>
-        <a href="{{ route('github') }}" class="btn btn-soc-github btn-fix btn-labeled btn-labeled-left">
-          <span class="btn-label"><i class="fa fa-github"></i></span>Continue with GitHub
-        </a>
-      </p>
+  @include('backend.layouts.headers.guest')
+
+  <div class="container mt--8 pb-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-8">
+        <div class="card bg-secondary shadow border-0">
+          <div class="card-header bg-transparent pb-5">
+            <div class="text-muted text-center mt-2 mb-3"><small>{{ __('Sign in with') }}</small></div>
+            <div class="btn-wrapper text-center">
+              <a href="{{ route('github') }}" class="btn btn-neutral btn-icon">
+                <span class="btn-inner--icon"><img src="{{ asset('argon') }}/img/icons/common/github.svg"></span>
+                <span class="btn-inner--text">{{ __('Github') }}</span>
+              </a>
+              <a href="{{ route('google') }}" class="btn btn-neutral btn-icon">
+                <span class="btn-inner--icon"><img src="{{ asset('argon') }}/img/icons/common/google.svg"></span>
+                <span class="btn-inner--text">{{ __('Google') }}</span>
+              </a>
+              <a href="{{ route('facebook') }}" class="btn btn-neutral btn-icon">
+                <span class="btn-inner--icon"><img src="{{ asset('argon') }}/img/icons/common/facebook.svg"></span>
+                <span class="btn-inner--text">{{ __('Facebook') }}</span>
+              </a>
+            </div>
+          </div>
+          <div class="card-body px-lg-5 py-lg-5">
+            <form role="form" method="POST" action="{{ route('login') }}">
+              @csrf
+
+              <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }} mb-3">
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                  </div>
+                  <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}" type="email" name="email" value="{{ old('email') }}" required autofocus>
+                </div>
+                @if ($errors->has('email'))
+                  <span class="invalid-feedback" style="display: block;" role="alert">
+                    <strong>{{ $errors->first('email') }}</strong>
+                  </span>
+                @endif
+              </div>
+              <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                  </div>
+                  <input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="{{ __('Password') }}" type="password" required>
+                </div>
+                @if ($errors->has('password'))
+                  <span class="invalid-feedback" style="display: block;" role="alert">
+                    <strong>{{ $errors->first('password') }}</strong>
+                  </span>
+                @endif
+              </div>
+              <div class="custom-control custom-control-alternative custom-checkbox">
+                <input class="custom-control-input" name="remember" id="customCheckLogin" type="checkbox" {{ old('remember') ? 'checked' : '' }}>
+                <label class="custom-control-label" for="customCheckLogin">
+                  <span class="text-muted">{{ __('Remember me') }}</span>
+                </label>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary my-4">{{ __('Sign in') }}</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-6">
+            @if (Route::has('password.request'))
+              <a href="{{ route('password.request') }}" class="text-light">
+                <small>{{ __('Forgot password?') }}</small>
+              </a>
+            @endif
+          </div>
+          <div class="col-6 text-right">
+              <a href="{{ route('register') }}" class="text-light">
+                  <small>{{ __('Create new account') }}</small>
+              </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <form class="ibox-body" method="POST" action="{{ route('login') }}">
-      @csrf
-
-      <h4 class="font-strong text-center mb-3">LOG IN</h4>
-
-      <div class="form-group mb-4">
-        <input id="email" class="form-control @error('email') is-invalid @enderror form-control-air" type="email" name="email" placeholder="Email Address" value="{{ old('email') }}" required autocomplete="email" autofocus>
-        @error('email')
-          <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-          </span>
-        @enderror
-      </div>
-      <div class="form-group mb-4">
-        <input id="password" class="form-control @error('password') is-invalid @enderror form-control-air" type="password" name="password" placeholder="Password" required autocomplete="current-password">
-        @error('password')
-          <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-          </span>
-        @enderror
-      </div>
-      <div class="flexbox mb-5">
-        <span>
-          <label class="ui-switch switch-icon mr-2 mb-0">
-            <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-            <span></span>
-          </label>
-          Remember
-        </span>
-        @if (Route::has('password.request'))
-          <a class="text-primary" href="{{ route('password.request') }}">
-            {{ __('Forgot Your Password?') }}
-          </a>
-        @endif
-      </div>
-      <div class="text-center">
-        <button type="submit" class="btn btn-primary btn-rounded btn-block btn-air">LOGIN</button>
-      </div><br>
-      <div class="text-center">
-        Don't Have An Account? <a href="{{ route('register') }}" class="btn btn-secondary btn-rounded btn-sm">Register Here</a>
-      </div>
-    </form>
   </div>
 @endsection
