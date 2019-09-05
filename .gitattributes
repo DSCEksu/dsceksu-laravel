@@ -1,6 +1,6 @@
 * text=auto
-linguist-vendored
-*.css linguist-vendored=false
-*.scss linguist-vendored=false
-*.js linguist-vendored=false
+public/argon/* linguist-vendored
+*.css linguist-vendored
+*.scss linguist-vendored
+*.js linguist-vendored
 CHANGELOG.md export-ignore
