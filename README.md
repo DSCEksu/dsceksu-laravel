@@ -8,7 +8,7 @@ This awesome Laravel Progressive Web App was created for Developer Student Clubs
 
 [![Heroku Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/DSCEksu/dsceksu-laravel)
 
-[![Laravel 5.x](https://img.shields.io/badge/Laravel-5.x-green.svg)](http://laravel.com)
+[![Laravel 5.8](https://img.shields.io/badge/Laravel-5.8-green.svg)](http://laravel.com)
 ![Fork](https://img.shields.io/github/forks/DSCEksu/dsceksu-laravel.svg?style=social)
 ![Pull Request](https://img.shields.io/github/issues-pr/DSCEksu/dsceksu-laravel.svg)
 ![Issue](https://img.shields.io/github/issues/DSCEksu/dsceksu-laravel.svg)
@@ -29,10 +29,10 @@ This awesome Laravel Progressive Web App was created for Developer Student Clubs
 Note you won't be able to change the images and run the project locally till you fork the epository and clone it locally
 
 - Click the ``Deploy With Heroku`` button above
-- Fill all that is required of you. E.g APP_NAME, APP_NICK, SCHOOL_NAME e.t.c
+- Fill all that is required of you. E.g APP_NAME, APP_NICK, APP_LOCATION e.t.c
 - Add All details in the .env.example to your ``Heroku`` Config Vars at the Settings tab
 - Run ``php artisan migrate --seed`` using the **Run Console** button
-- Start your app buy clicking the **Open App** but and login with **lead@dsc.com** as the email and **password** as the password
+- Start your app buy clicking the **Open App** but and login with **lead@dsc.com** as the email and **password** as the password for the lead. Check [Issues](https://github.com/DSCEksu/dsceksu-laravel/issues) for more login option
 
 ### With Fork
 
@@ -42,7 +42,7 @@ Note you won't be able to change the images and run the project locally till you
 - Add ``Heroku Postgres`` addon to your project at the Resources tab
 - Add All details in the .env.example to your ``Heroku`` Config Vars at the Settings tab
 - Run ``php artisan migrate --seed`` using the **Run Console** button
-- Start your app buy clicking the **Open App** but and login with **lead@dsc.com** as the email and **password** as the password
+- Start your app buy clicking the **Open App** but and login with **lead@dsc.com** as the email and **password** as the password for the lead. Check [Issues](https://github.com/DSCEksu/dsceksu-laravel/issues) for more login option
 
 ### How To
 
@@ -95,7 +95,7 @@ DSC Laravel Template is an open source software project and we encourage develop
 ## License
 
 ```bash
-Copyright (c) 2018 DSC Laravel Temp 🔥
+Copyright (c) 2018 DSC Laravel Template 🔥
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
